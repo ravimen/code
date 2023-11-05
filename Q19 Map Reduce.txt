@@ -14,7 +14,3 @@ db.Map.insertMany([
 db.Map.mapReduce(function(){emit(this.Age,this.Marks);},function(key,values){return Array.sum(values)},{out:'result_reduce'})
 
 db.result_reduce.find()
-
-db.Map.mapReduce(function(){emit(this.Age,this.Marks);},function(key,values){return Array.avg(values)},{out:'result_reduce'})
-
-db.result_reduce.find()
